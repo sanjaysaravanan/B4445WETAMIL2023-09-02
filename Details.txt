@@ -1,0 +1,47 @@
+
+
+Code/Folder Structure:
+    Separate the Core Business Logic/ APIs and DB Communication:
+
+      Grouping of apis with /<path-name>
+
+      /movies ---> CRUD on movies
+      /users ---> CRUD on users
+      /theaters ---> CRUD on theaters
+      /booking ---> CRUD on theaters
+
+      reference: 
+        https://www.codespeedy.com/create-separate-routes-file-in-node-express-js/
+
+Authentication & Authorization:
+
+  Authentication Flow:
+    User Register or Login to a Application:
+      1. Write API for register and register should create a user in the DB
+      2. Write API for login and login should create a new jwt token along with user details and return to FE
+      3. So, APIs /register and /login will be public and accessible by public
+  
+  Authorization Flow:
+    Application flow after successfull login:
+      1. use the token from the login response
+      2. APIs except /login, /register, read movies API should contain the request header 
+         authorization/acesstoken: < jwt-token >
+      3. backend will use this token to verify the roles or access or permission of the user in backend
+
+FE:
+  Authentication:
+    Login/Register Pages
+    Only these two pages should be accessible before login
+    trying to access any other page should direct back to the login page
+  Authorization:
+    1. Login API will return a token & role, use that token as a identifier 
+    for the login status,
+    2. use local storage to store the token
+      then restrict the user access with role
+
+CSS Transitions:
+  @keyframs and transform funcs ( skew, scal, translate, rotate )
+
+
+Next Session:
+  Authorization for API and FE Pages using simple roles concept

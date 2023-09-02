@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* Transition -> height: 100px; ---> 500px */
+    /* transform:  */
+
+    /* translate, scale, skew, rotate */
+
+    .parent {
+      height: 100px;
+      width: 100px;
+      transform: scale(1);
+      background-color: blue;
+      transition: transform 0.5s linear;
+      animation: bounce 0.2s linear infinite alternate;
+    }
+
+    /* .parent:hover {
+      transform: rotate(45deg);
+    } */
+    @keyframes bounce {
+      0% {
+        transform: translate(0, 10px);
+      }
+
+      100% {
+        transform: translate(0, 0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="parent"></div>
+</body>
+
+</html>
